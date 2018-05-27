@@ -1,4 +1,7 @@
 package com.github.dgarcia202.springcrm.exceptions;
 
-public class CrmException {
+public class CrmException extends Exception {
+    public CrmException(String message, Throwable cause) {
+        super(message, cause);
+    }
 }
