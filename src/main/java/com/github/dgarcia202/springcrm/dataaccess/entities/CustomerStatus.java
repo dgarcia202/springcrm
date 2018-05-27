@@ -2,6 +2,7 @@ package com.github.dgarcia202.springcrm.dataaccess.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class CustomerStatus {
@@ -9,11 +10,8 @@ public class CustomerStatus {
     @Id
     private long id;
 
+    @NotNull
     private String description;
-
-    public CustomerStatus(long id) {
-        setId(id);
-    }
 
     public String getDescription() {
         return description;

@@ -1,0 +1,20 @@
+{
+  "name":"demo client",
+  "addresses":[
+    {
+      "country":"ES",
+      "state":"Murcia",
+      "city":"Lorca",
+      "postalCode":"080898",
+      "addressLine1":"Calle Lepanto 16"
+    },
+    {
+      "country":"ES",
+      "state":"Extremadura",
+      "city":"Caceres",
+      "postalCode":"123456",
+      "addressLine1":"Calle Atienza 11"
+    }
+
+  ]
+}

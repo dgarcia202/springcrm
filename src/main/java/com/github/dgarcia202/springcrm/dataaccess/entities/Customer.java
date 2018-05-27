@@ -1,7 +1,7 @@
 package com.github.dgarcia202.springcrm.dataaccess.entities;
 
 import javax.persistence.*;
-import java.util.Date;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Customer {
@@ -10,18 +10,12 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
+    @NotNull
     private String name;
 
     @ManyToOne
+    @NotNull
     private CustomerStatus status;
-
-    private Date dateCreated;
-
-    public Customer(String name, CustomerStatus status, Date createdDate) {
-        setName(name);
-        setStatus(status);
-        setDateCreated(createdDate);
-    }
 
     public long getId() {
         return id;
@@ -37,14 +31,6 @@ public class Customer {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Date getDateCreated() {
-        return dateCreated;
-    }
-
-    public void setDateCreated(Date dateCreated) {
-        this.dateCreated = dateCreated;
     }
 
     public CustomerStatus getStatus() {

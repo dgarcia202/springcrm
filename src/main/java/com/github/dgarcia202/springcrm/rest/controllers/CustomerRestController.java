@@ -29,9 +29,9 @@ public class CustomerRestController {
     }
 
     @PostMapping
-    public ResponseEntity createCustomer(@RequestBody CustomerCreationRto requestBody) {
+    public ResponseEntity createCustomer(@RequestBody CustomerCreationRto customerCreation) {
 
-        customerCreationService.create(requestBody.getName());
+        customerCreationService.create(customerCreation);
 
         return ResponseEntity
                 .ok()
