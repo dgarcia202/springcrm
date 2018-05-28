@@ -23,7 +23,7 @@ public class CustomerCreationService {
         this.customers = customers;
     }
 
-    public void create(CustomerCreationRto customerCreation) {
+    public Customer create(CustomerCreationRto customerCreation) {
 
         CustomerStatus status = new CustomerStatus();
         status.setId(INITIAL_CUSTOMER_STATUS);
@@ -32,6 +32,6 @@ public class CustomerCreationService {
         customer.setName(customerCreation.getName());
         customer.setStatus(status);
 
-        customers.saveAndFlush(customer);
+        return customers.saveAndFlush(customer);
     }
 }

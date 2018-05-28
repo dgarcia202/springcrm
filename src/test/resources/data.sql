@@ -1,0 +1,10 @@
+insert into CUSTOMER (id, name, status_id) values (1000, 'Dablist', 3);
+insert into CUSTOMER (id, name, status_id) values (1001, 'Jaxnation', 2);
+insert into CUSTOMER (id, name, status_id) values (1002, 'Izio', 3);
+insert into CUSTOMER (id, name, status_id) values (1003, 'Podcat', 3);
+insert into CUSTOMER (id, name, status_id) values (1004, 'Twimbo', 2);
+insert into CUSTOMER (id, name, status_id) values (1005, 'Oyope', 2);
+insert into CUSTOMER (id, name, status_id) values (1006, 'Meetz', 2);
+insert into CUSTOMER (id, name, status_id) values (1007, 'Skinix', 1);
+insert into CUSTOMER (id, name, status_id) values (1008, 'Wordpedia', 1);
+insert into CUSTOMER (id, name, status_id) values (1009, 'Topicblab', 2);
