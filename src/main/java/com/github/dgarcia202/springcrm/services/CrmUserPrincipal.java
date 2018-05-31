@@ -1,36 +1,39 @@
 package com.github.dgarcia202.springcrm.services;
 
+import com.github.dgarcia202.springcrm.dataaccess.entities.Authority;
 import com.github.dgarcia202.springcrm.dataaccess.entities.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class CrmUserPrincipal implements UserDetails {
 
-    private String username;
+    private User user;
 
-    private String password;
+    private List<Authority> authorities = new ArrayList<>();
 
-    public CrmUserPrincipal(User user) {
-        username = user.getUsername();
-        password = user.getPassword();
+    public CrmUserPrincipal(User user, List<Authority> authorities) {
+        this.user = user;
+        this.authorities = authorities;
     }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return new ArrayList<>();
+        return authorities.stream().map(x -> new CrmUserAuthority(x)).collect(Collectors.toList());
     }
 
     @Override
     public String getPassword() {
-        return password;
+        return user.getPassword();
     }
 
     @Override
     public String getUsername() {
-        return username;
+        return user.getUsername();
     }
 
     @Override
@@ -50,6 +53,6 @@ public class CrmUserPrincipal implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-        return true;
+        return user.isActive();
     }
 }
